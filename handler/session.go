@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/aberestyak/wireguard-ui/util"
 	"github.com/gorilla/sessions"
 	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
-	"github.com/ngoduykhanh/wireguard-ui/util"
 )
 
 func ValidSession(next echo.HandlerFunc) echo.HandlerFunc {

@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/NicoNex/echotron/v3"
+	"github.com/aberestyak/wireguard-ui/store"
 	"github.com/labstack/gommon/log"
-	"github.com/ngoduykhanh/wireguard-ui/store"
 )
 
 type SendRequestedConfigsToTelegram func(db store.IStore, userid int64) []string
@@ -87,9 +87,7 @@ func Start(initDeps TgBotInitDependencies) (err error) {
 				_, err := bot.SendMessage(
 					fmt.Sprintf("You can only request your configs once per %d minutes", FloodWait),
 					userid,
-					&echotron.MessageOptions{
-						ReplyToMessageID: update.Message.ID,
-					})
+					&echotron.MessageOptions{})
 				if err != nil {
 					log.Errorf("Failed to send telegram message. Error %v", err)
 				}
@@ -106,9 +104,7 @@ func Start(initDeps TgBotInitDependencies) (err error) {
 				_, err := bot.SendMessage(
 					messageText,
 					userid,
-					&echotron.MessageOptions{
-						ReplyToMessageID: update.Message.ID,
-					})
+					&echotron.MessageOptions{})
 				if err != nil {
 					log.Errorf("Failed to send telegram message. Error %v", err)
 				}

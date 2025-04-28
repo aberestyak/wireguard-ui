@@ -20,14 +20,14 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/ngoduykhanh/wireguard-ui/store"
-	"github.com/ngoduykhanh/wireguard-ui/telegram"
+	"github.com/aberestyak/wireguard-ui/store"
+	"github.com/aberestyak/wireguard-ui/telegram"
 	"github.com/skip2/go-qrcode"
 	"golang.org/x/mod/sumdb/dirhash"
 
+	"github.com/aberestyak/wireguard-ui/model"
 	externalip "github.com/glendc/go-external-ip"
 	"github.com/labstack/gommon/log"
-	"github.com/ngoduykhanh/wireguard-ui/model"
 	"github.com/sdomino/scribble"
 )
 
